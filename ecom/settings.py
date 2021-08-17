@@ -132,7 +132,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
 
-    os.path.join(BASE_DIR, '../media/static/'),
+    os.path.join(BASE_DIR, '/static/'),
 
     os.path.join(BASE_DIR, '/media/'),
 
@@ -142,7 +142,6 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_ROOT ='/media/static'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 

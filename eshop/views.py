@@ -13,7 +13,7 @@ def home (request):
 
 
 
-@login_required(login_url='/login/')
+
 def store (request):
 
     categories = Category.objects.all()
@@ -27,7 +27,7 @@ def store (request):
     context = {'products': products,'categories':categories}
     return render(request, 'store.html',context)
 
-
+@login_required(login_url='/login/')
 def add_product (request):
     if request.user.is_superuser:
         user = request.user
@@ -57,7 +57,7 @@ def add_product (request):
         context = {'form':form,'categorys':categorys}
         return render(request, 'add_product.html',context)
 
-
+@login_required(login_url='/login/')
 def add_category (request):
     if request.user.is_superuser:
         if request.method == 'POST':
@@ -100,7 +100,7 @@ def userlogin(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, 'logged in successful')
-                return HttpResponseRedirect('/')
+                return HttpResponseRedirect('/store/')
 
     form = UserLoginform()
     context = {'form':form}
@@ -108,7 +108,7 @@ def userlogin(request):
 
 
 
-
+@login_required(login_url='/login/')
 def showcart(request):
     if request.user.is_authenticated:
         user = request.user
@@ -149,7 +149,7 @@ def showcart(request):
         return render(request, 'cart.html',context)
 
 
-
+@login_required(login_url='/login/')
 def add_to_cart(request):
     if request.user.is_authenticated:
         print("-------------------------------------------")
@@ -166,7 +166,7 @@ def add_to_cart(request):
 
 
 
-
+@login_required(login_url='/login/')
 def pluscart (request):
    '''cartid = request.GET.get('cartid')
     print(cartid)
@@ -179,7 +179,7 @@ def pluscart (request):
    cart = cart (user = user, product = product,quantity= quantity)
    cartobj.save()
 
-
+@login_required(login_url='/login/')
 def remove(request):
 
     if request.user.is_authenticated:
@@ -197,7 +197,7 @@ def userlogout(request):
     logout(request)
     return HttpResponseRedirect('/login/')
 
-
+@login_required(login_url='/login/')
 def profile(request):
     if request.user.is_authenticated:
         user = request.user
@@ -210,7 +210,7 @@ def profile(request):
         context = {'customers':customers,'address': address}
         return render(request, 'profile.html',context)
 
-
+@login_required(login_url='/login/')
 def checkout(request):
     if request.user.is_authenticated:
         custid = request.GET.get('custid')
@@ -231,7 +231,7 @@ def checkout(request):
         context = {'cart': cart,'sum': sum,'total': total,'address': address}
         return render(request, 'checkout.html',context)
 
-
+@login_required(login_url='/login/')
 def payment_done(request):
     if request.user.is_authenticated:
         user = request.user
@@ -246,7 +246,7 @@ def payment_done(request):
         return HttpResponseRedirect('/orders')
 
 
-
+@login_required(login_url='/login/')
 def orders (request):
     if request.user.is_authenticated:
         user = request.user
