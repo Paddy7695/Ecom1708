@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+{% block content %}
+add category
+<form method="POST" action="{% url 'add_category' %}" enctype="multipart/form-data">
+
+
+    {% csrf_token %}
+
+
+    <div class="form-group" >
+        {{form.as_p}}
+
+    <input type="submit" class="btn-btn-danger" value="add product">
+    {% if form.non_field_errors %}
+    {% for error in non_field_errors %}
+    {{error}}
+    {% endfor %}
+    {% endif %}
+</form>
+
+{% endblock %}

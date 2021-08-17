@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% block content %}
+{% for order in orders_placed %}
+<div class="card">
+    <div class="card-header">
+        Featured
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{ order.product }}</h5>
+        <p class="card-text">{{order.product.discription}}.</p>
+        <p class="card-text">quantity={{ order.quantity }}.</p>
+        <p>orderstatus={{ order.stutus }}</p>
+
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

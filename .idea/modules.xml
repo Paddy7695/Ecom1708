@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Miniblog/.idea/Miniblog.iml" filepath="$PROJECT_DIR$/../Miniblog/.idea/Miniblog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../GANESH DEPLOY/Multiplier_Learning_Digital_Ocean_Deployment-12-07-2021/.idea/Multiplier_Learning_Digital_Ocean_Deployment.iml" filepath="$PROJECT_DIR$/../../GANESH DEPLOY/Multiplier_Learning_Digital_Ocean_Deployment-12-07-2021/.idea/Multiplier_Learning_Digital_Ocean_Deployment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../connection/.idea/connection.iml" filepath="$PROJECT_DIR$/../connection/.idea/connection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../drf1/.idea/drf1.iml" filepath="$PROJECT_DIR$/../drf1/.idea/drf1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ecom.iml" filepath="$PROJECT_DIR$/.idea/ecom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ganeshpro/.idea/ganeshpro.iml" filepath="$PROJECT_DIR$/../ganeshpro/.idea/ganeshpro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../students/.idea/students.iml" filepath="$PROJECT_DIR$/../students/.idea/students.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../todo/.idea/todo.iml" filepath="$PROJECT_DIR$/../todo/.idea/todo.iml" />
+    </modules>
+  </component>
+</project>

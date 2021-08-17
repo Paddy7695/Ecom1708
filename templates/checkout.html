@@ -1,0 +1,82 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="card-body">
+                        <h5 class="mb-2">Billing details</h5>
+                        {% for item in cart %}
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+
+
+
+
+                                <h1>{{item.product.id}}</h1>
+
+                                <h5 class="card-title">product name:{{item.product.name}}</h5>
+
+
+                                <h6 class="card-subtitle mb-2 text-muted">product quantity:{{item.quantity}}</h6>
+
+
+                                <p class="card-text">product price:{{item.product.price}}</p>
+                                <a href="#" class="card-link">discription</a>
+                            </div>
+                         {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    {% for add in address %}
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">address</h5>
+                            <input name="custid" value="{{ add.id }}">
+                            <p>{{ add.city }}</p>
+                            {{ add.area }}
+                            {{ add.pincode }}
+                            <a href="#" class="card-link">discription</a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="col-sm-4">
+            <div class="card-body">
+                <h5 class="mb-3">The total amount of</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        Temporary amount
+                        <span>{{sum}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                        Shipping
+                        <span>70 rs</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                        <div>
+                            <strong>The total amount of</strong>
+                            <strong>
+                                <p class="mb-0">(including shipping charge)</p>
+                            </strong>
+                        </div>
+                        <span><strong>{{total}} rs.</strong></span>
+                    </li>
+                </ul>
+                <form action="/payment_done">
+                    <button type="submit" class="btn btn-primary btn-block waves-effect waves-light">payment</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

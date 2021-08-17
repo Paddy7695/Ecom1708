@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{% block content %}
+add product
+<form method="POST" action="{% url 'add_product' %}" enctype="multipart/form-data">
+
+
+    {% csrf_token %}
+
+
+    <div class="form-group" >
+        <p>{{form.name}}</p>
+        <p>{{form.price}}</p><br><br>
+
+
+        <p><select name="category">
+            {% for category in categorys %}
+            <option  value="{{category.id}}">
+                {{ category.name }}
+            </option>
+            {% endfor %}
+            </select><br><br>
+        </p>><br><br>
+
+        <p>{{form.discription}}</p><br><br>
+        <p>{{form.image}}</p><br><br>
+    </div><br><br>
+
+
+    <input type="submit" class="btn-btn-danger" value="add product">
+    {% if form.non_field_errors %}
+    {% for error in non_field_errors %}
+    {{error}}
+    {% endfor %}
+    {% endif %}
+</form>
+
+{% endblock %}
