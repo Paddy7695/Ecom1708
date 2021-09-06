@@ -2,33 +2,40 @@
 {% block content %}
 <h1>CustomerInfo</h1>
 <ul>
-    {% for customer in customers %}
-    <li>{{customer.name}}</li>
-    <li>{{customer.email}}</li>
-    <li>{{customer.phone}}</li>
 
-    {% endfor %}
-    <a href="#" > edit info</a>
+    <li>{{customers.name}}</li>
+    <li>{{customers.email}}</li>
+    <li>{{customers.phone}}</li>
+
+
+    <a href="/customerinfo" > edit info/edit info</a>
 </ul>
 
 <h1>ADDRESS</h1>
 <ul>
 {% for add in address %}
+    address no : {{ for.count }}
     <li>{{add.city}}</li>
     <li>{{add.area}}</li>
     <li>{{add.pincode}}</li>
-    <a href="#" > edit address</a>
+    <a href="/add_address" > add/edit address</a><br><br>
 {% endfor %}
-    <a href="#" > add address</a>
+
 </ul>
 <a href="/orders">check  your order status</a>
-{% if user.is_superuser %}
+
+{% if perms.eshop.add_product %}
 <div class="nav-item">
     <a class="nav-link active" href="/add_product" tabindex="-1" aria-disabled="true">Add Products</a>
 </div>
-
+{% endif %}
+------------
+{% if perms.eshop.delete_product %}
 <div class="nav-item">
     <a class="nav-link active" href="/add_category" tabindex="-1" aria-disabled="true">Add Category</a>
+</div>
+<div class="nav-item">
+    <a class="nav-link active" href="/change_status" tabindex="-1" aria-disabled="true">Change status of recieved orders</a>
 </div>
 {% endif %}
 {% endblock %}

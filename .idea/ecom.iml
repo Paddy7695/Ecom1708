@@ -11,5 +11,9 @@
     <orderEntry type="module" module-name="connection" />
     <orderEntry type="module" module-name="students" />
     <orderEntry type="module" module-name="Multiplier_Learning_Digital_Ocean_Deployment" />
+    <orderEntry type="module" module-name="celeryproject" />
+    <orderEntry type="module" module-name="Multiplier_Learning" />
+    <orderEntry type="module" module-name="demo" />
+    <orderEntry type="module" module-name="authtrial" />
   </component>
 </module>

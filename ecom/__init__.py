@@ -1,0 +1,1 @@
+default_app_confiq = 'customers.app.AppConfig'

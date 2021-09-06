@@ -1,6 +1,7 @@
 {% extends 'base.html'%}
 {% block content %}
 add product
+{% if perms.eshop.add_product %}
 <form method="POST" action="{% url 'add_product' %}" enctype="multipart/form-data">
 
 
@@ -33,5 +34,5 @@ add product
     {% endfor %}
     {% endif %}
 </form>
-
+{% endif %}
 {% endblock %}

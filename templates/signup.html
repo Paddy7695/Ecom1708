@@ -3,11 +3,24 @@
 <h1> SIGNUP</h1>
 <div class="container mx-auto">
         <div class="row mx_auto"></div>
-            <form method="POST">
+            <form method="POST" action="/signup/">
                 {% csrf_token %}
-                {% for fm in form %}
-                <p class="form-control">{{ fm.label_tag}} {{ fm }}  {{ fm.errors|striptags }}</p>
-                {% endfor %}
+                <p class="form-control" >Username:{{ form.username}} </p>
+                <p class="form-control">First name:{{ form.first_name}} </p>
+                <p class="form-control">Lastname:{{ form.last_name}} </p>
+                <p class="form-control">Password:{{ form.password1}} </p>
+                <p class="form-control">Confirm Password:{{ form.password2}} </p>
+                <p> whats your role </p>
+                <div>
+                    <input type="radio" id="Buyer" name="usertype" value="Buyer">
+                    <label for="Buyer">Buyer</label><br>
+                </div>
+
+                <div>
+                    <input type="radio" id="Seller" name="usertype" value="Seller" >
+                    <label for="Seller">Seller</label><br>
+                </div>
+
                 <input type="submit">
             </form>
         </div>

@@ -3,8 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../Miniblog/.idea/Miniblog.iml" filepath="$PROJECT_DIR$/../Miniblog/.idea/Miniblog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Multiplier_Learning/Multiplier_Learning/.idea/Multiplier_Learning.iml" filepath="$PROJECT_DIR$/../Multiplier_Learning/Multiplier_Learning/.idea/Multiplier_Learning.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../GANESH DEPLOY/Multiplier_Learning_Digital_Ocean_Deployment-12-07-2021/.idea/Multiplier_Learning_Digital_Ocean_Deployment.iml" filepath="$PROJECT_DIR$/../../GANESH DEPLOY/Multiplier_Learning_Digital_Ocean_Deployment-12-07-2021/.idea/Multiplier_Learning_Digital_Ocean_Deployment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../authtrial/.idea/authtrial.iml" filepath="$PROJECT_DIR$/../authtrial/.idea/authtrial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../celerypro/celeryproject/.idea/celeryproject.iml" filepath="$PROJECT_DIR$/../celerypro/celeryproject/.idea/celeryproject.iml" />
       <module fileurl="file://$PROJECT_DIR$/../connection/.idea/connection.iml" filepath="$PROJECT_DIR$/../connection/.idea/connection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../demo/.idea/demo.iml" filepath="$PROJECT_DIR$/../demo/.idea/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/../drf1/.idea/drf1.iml" filepath="$PROJECT_DIR$/../drf1/.idea/drf1.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ecom.iml" filepath="$PROJECT_DIR$/.idea/ecom.iml" />
       <module fileurl="file://$PROJECT_DIR$/../ganeshpro/.idea/ganeshpro.iml" filepath="$PROJECT_DIR$/../ganeshpro/.idea/ganeshpro.iml" />

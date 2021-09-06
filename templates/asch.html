@@ -86,3 +86,65 @@ category = category
 {% else %}
 {% endif %}
 {{cart.count}}
+{% for fm in form %}
+
+<p class="form-control">{{ fm.label_tag}} {{ fm }}  {{ fm.errors|striptags }}</p>
+{% endfor %}
+password1 = forms.CharField(label= 'Password',widget=forms.PasswordInput(attrs={'class':'form-control'}))
+password2 = forms.CharField(label= 'Confirm Password (again)',widget=forms.PasswordInput(attrs={'class':'form-control'}))
+<form action="/add_to_cart">
+    <input type="hidden" name="productid" value="{{product.id}}">
+    <input type="submit" value="add to cart">
+</form>
+<div class="list-group">
+    <a href="/cart?quantityadd={{c.quantity}}&cartid={{c.id}}&productid={{c.product.id}}" class="list-group-item list-group-item-action active" aria-current="true">
+        +
+    </a>
+</div>
+<p class="card-text">{{ c.quantity }}</p>
+<div class="list-group">
+    <a href="/cart?quantitymin={{c.quantity}}" class="list-group-item list-group-item-action active" aria-current="true">
+        -
+    </a>
+</div>
+'''userID = request.POST.get("user")
+print(userID)
+user = request.user
+print(user)'''
+print(categoryID)
+category = Category.objects.get(id=categoryID)
+{% for customer in customers %}
+{% endfor %}
+
+
+
+
+import os
+from twilio.rest import Client
+
+
+# Find your Account SID and Auth Token at twilio.com/console
+# and set the environment variables. See http://twil.io/secure
+account_sid = os.environ['TWILIO_ACCOUNT_SID']
+auth_token = os.environ['TWILIO_AUTH_TOKEN']
+client = Client(account_sid, auth_token)
+
+message = client.messages \
+.create(
+body="Join Earth's mightiest heroes. Like Kevin Bacon.",
+from_='+15017122661',
+to='+15558675310'
+)
+
+print(message.sid)
+
+
+from django.db.models.signals import post_save
+from django.contrib.auth.models import User
+from .models import *
+from django.dispatch import receiver
+
+@receiver(signal=post_save,sender = Customers)
+def post_save_create_customer(sender,instance,create,*args,**kwargs):
+if created:
+Customers.objects.create(user = instance)

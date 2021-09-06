@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+{% block content %}
+add custormeronfo
+
+<form method="POST" action="{% url 'customerinfo' %}" enctype="multipart/form-data">
+
+
+    {% csrf_token %}
+
+    {{ form.name }}
+<!--    <input type="hidden" name="name" value="{{ form.name }}" >-->
+    {{ form.email }}
+<!--    <input type="hidden" name="email" value="{{ form.email }}" >-->
+    {{ form.phone }}
+<!--    <input type="hidden" name="phone" value="{{ form.phone }}" >-->
+
+    <option  value="{{user.id}}">
+        {{user.username }}
+    </option>
+
+
+    <input type="submit" class="btn-btn-danger" value="add customerinfo">
+    {% if form.non_field_errors %}
+    {% for error in non_field_errors %}
+    {{error}}
+    {% endfor %}
+    {% endif %}
+</form>
+
+{% endblock %}

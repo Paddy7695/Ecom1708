@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% block content %}
+add address
+
+<form method="POST" action="{% url 'add_address' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+
+    <input type="submit" class="btn-btn-danger" value="submit address">
+    {% if form.non_field_errors %}
+    {% for error in non_field_errors %}
+    {{error}}
+    {% endfor %}
+    {% endif %}
+</form>
+
+{% endblock %}

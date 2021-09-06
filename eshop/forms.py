@@ -6,9 +6,17 @@ from django.contrib.auth.models import User
 
 
 class SignUpform(UserCreationForm):
+    usertype_choices =[('Seller','Seller'),
+                ('Buyer','Buyer')
+              ]
+
+    usertype = forms.ChoiceField(choices=usertype_choices)
+
     class Meta:
         model = User
         fields = ['username','first_name','last_name']
+
+
 
 
 
@@ -16,6 +24,9 @@ class Customersform(forms.ModelForm):
     class Meta:
         model = Customers
         fields = '__all__'
+
+
+
 
 
 class UserLoginform(AuthenticationForm):
@@ -34,6 +45,23 @@ class Categoryform(forms.ModelForm):
     class Meta:
         model = Category
         fields = '__all__'
+
+class Customerform(forms.ModelForm):
+    class Meta:
+        model = Customers
+        fields = ['name','email','phone']
+
+class Addressform(forms.ModelForm):
+    class Meta:
+        model = Address
+        fields = '__all__'
+
+
+
+class OrderPlacedform(forms.ModelForm):
+    class Meta:
+        model = order_placed
+        fields = ['id','stutus']
 
 
 

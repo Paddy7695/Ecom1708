@@ -1,11 +1,11 @@
-from django.test import TestCase
+'''from django.test import TestCase
 
 # Create your tests here.
 class Signup_Test(TestCase):
 
     def setUp(self):
 
-        self.user = User.objects.create('pradip', None,'pradip','pradipchavanchaemail@gmail.com','1','male','student')
+        self.user = user.objects.create(Username='pradip',First_name='pradip',Last_name='chavan',password = 'Pradip@7695',Password_confirmation = 'Pradip@7695')
         self.user.save()
 
     def test_login_valid_user(self):
@@ -23,3 +23,22 @@ class Signup_Test(TestCase):
 
     def tearDown(self):
         self.user.delete()
+'''
+l=[1,2]
+print(id(l))
+print(l)
+l.append(3)
+print(id(l))
+print(l)
+
+a=[10,25,5,3,1,40]
+print(a)
+print(id(a))
+b=a
+print(id(b))
+print(b)
+print(a)
+print(id(a))
+a.sort()
+print(id(a))
+print(a)
